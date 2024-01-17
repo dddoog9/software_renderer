@@ -33,3 +33,11 @@ export function put_pixel(framebuffer, x, y, r, g, b) {
   y |= 0;
   framebuffer.color32[ (x + y*framebuffer.width) ] = color32(r, g, b);
 }
+
+export function clear_color(framebuffer, r, g, b) {
+  const color32array = framebuffer.color32;
+  const size = color32array.length;
+  for (let i = 0; i < size; i++) {
+    color32array[i] = color32(r, g, b);
+  }
+}
