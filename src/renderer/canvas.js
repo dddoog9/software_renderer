@@ -11,9 +11,9 @@ export function create_canvas(w, h) {
   return cx;
 }
 
-export function put_framebuffer(canvas_cx, framebuffer, dx, dy, w, h) {
+export function put_framebuffer(canvas_cx, framebuffer, x, y, w, h) {
   canvas_cx.putImageData(
     new ImageData(framebuffer.color8, w, h),
-    dx, dy
+    x, y
   );
 }
