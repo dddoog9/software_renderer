@@ -41,3 +41,11 @@ export function clear_color(framebuffer, r, g, b) {
     color32array[i] = color32(r, g, b);
   }
 }
+
+export function clear_depth(framebuffer, depth) {
+  const depth_array = framebuffer.depth;
+  const size = depth_array.length;
+  for (let i = 0; i < size; i++) {
+    depth_array[i] = depth;
+  }
+}
