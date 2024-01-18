@@ -61,15 +61,13 @@ export function put_depth_less(framebuffer, x, y, depth) {
 export function clear_color(framebuffer, r, g, b) {
   const color32array = framebuffer.color32;
   const size = color32array.length;
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < size; i++)
     color32array[i] = color32(r, g, b);
-  }
 }
 
 export function clear_depth(framebuffer, depth) {
   const depth_array = framebuffer.depth;
   const size = depth_array.length;
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < size; i++)
     depth_array[i] = depth;
-  }
 }
