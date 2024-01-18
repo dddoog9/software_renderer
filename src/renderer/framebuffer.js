@@ -31,14 +31,14 @@ export function color32(r, g, b) {
 export function put_pixel(framebuffer, x, y, r, g, b) {
   x |= 0;
   y |= 0;
-  framebuffer.color32[ (x + y*framebuffer.width) ] = color32(r, g, b);
+  framebuffer.color32[x + y*framebuffer.width] = color32(r, g, b);
 }
 
 export function put_depth(framebuffer, x, y, depth) {
   x |= 0;
   y |= 0;
   const depth_array = framebuffer.depth;
-  const index = (x + y*framebuffer.width);
+  const index = x + y*framebuffer.width;
   if (depth > depth_array[index]) {
     depth_array[index] = depth;
     return true;
@@ -50,7 +50,7 @@ export function put_depth_less(framebuffer, x, y, depth) {
   x |= 0;
   y |= 0;
   const depth_array = framebuffer.depth;
-  const index = (x + y*framebuffer.width);
+  const index = x + y*framebuffer.width;
   if (depth < depth_array[index]) {
     depth_array[index] = depth;
     return true;
