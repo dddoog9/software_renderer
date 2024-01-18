@@ -14,7 +14,19 @@ export function vector_scale(n, src, factor, dest) {
     dest[i] = src[i]*factor;
 }
 
-export function vector_scale2(n, src, factor) {
+export function vector_scale2(n, vec, factor) {
   for (let i = 0; i < n; i++)
-    src[i] *= factor;
+    vec[i] *= factor;
+}
+
+export function vector_div(n, src, factor, dest) {
+  for (let i = 0; i < n; i++)
+    dest[i] = src[i]/factor;
+}
+
+export function vector_dot(n, a, b) {
+  let res = 0;
+  for (let i = 0; i < n; i++)
+    res += a[i]*b[i];
+  return res;
 }
